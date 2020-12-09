@@ -17,11 +17,10 @@
 
 ## Usage
 
-> Use 'npm install' in terminal
-> Run 'npm run db:setup' to seed the DB
-> Run 'npm run server-dev' to spin up the proxy server.
-> Enter 'http://localhost:8080/?isbn=ENTER_ISBN_HERE' into the URL.
-> Replace ENTER_ISBN_HERE with either 9780765326386 or 9780670020553 to demonstrate full proxy functionality.
+- Use 'npm install' in terminal
+- Run 'npm run server-dev' to spin up the proxy server.
+- Enter 'http://localhost:8080/?isbn=ENTER_ISBN_HERE' into the URL.
+- Replace ENTER_ISBN_HERE with either 9780765326386 or 9780670020553 to demonstrate full proxy functionality.
 
 
 ## Requirements
@@ -39,6 +38,5 @@ From within the root directory:
 
 ```sh
 npm install
-npm run db:setup
 ```
 
