@@ -4,11 +4,13 @@ const port = process.env.PORT || 8080;
 const cors = require('cors');
 
 app.use(cors());
-app.use(express.static(__dirname + '/../client/dist'));
+// app.use(express.static(__dirname + '/../client/dist'));
+app.use(express.static('client/dist'));
 
 
-app.get('/product/:rootIsbn/alsoBought', (req, res) => {
-  axios.get(`http://54.183.241.255:3004/products/${req.params.rootIsbn}/alsobought`)
+app.get('/products/:rootIsbn/alsoBought', (req, res) => {
+  console.log(req.params.rootIsbn);
+  axios.get(`http://54.183.241.255:3004/products/${req.params.rootIsbn}/alsoBought`)
   .then((response) => {
     res.status(200).send(response.data);
   })
