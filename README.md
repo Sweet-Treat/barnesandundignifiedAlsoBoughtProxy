@@ -25,10 +25,9 @@
 
 ## Requirements
 
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
-
 - Node 6.13.0
-- etc
+- Express 4.17.1
+- CORS 2.8.5
 
 ## Development
 
