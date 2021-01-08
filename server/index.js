@@ -6,9 +6,35 @@ const cors = require('cors');
 app.use(cors());
 app.use(express.static(__dirname + '/../client/dist'));
 
+
+app.get('/product/:rootIsbn/alsoBought', (req, res) => {
+  axios.get(`http://54.183.241.255:3004/products/${req.params.rootIsbn}/alsobought`)
+  .then((response) => {
+    res.status(200).send(response.data);
+  })
+  .catch((err) => {
+    res.status(500).send(err);
+  })
+})
+
+
+
 app.listen(port, () => {
-  console.log(`Listening at http://localhost:${port}`);
+  console.log(`Listening on EC2 instance port: ${port}`);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
