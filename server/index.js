@@ -42,7 +42,6 @@ app.get('/products/:isbn13', (req, res) => {
   console.log(req.params.isbn13);
   axios.get(`${productDetailsIP}/products/${req.params.isbn13}`)
   .then((result) => {
-    console.log('did this work?!?!? Avigail\'s service');
     res.status(200).send(result.data);
   })
   .catch((err) => {
