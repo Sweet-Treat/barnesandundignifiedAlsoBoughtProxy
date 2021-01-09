@@ -28,7 +28,6 @@ app.get('/product/:isbn/formats', (req, res) => {
 
 /**** Also Bought Service API Call ****/
 app.get('/products/:rootIsbn/alsoBought', (req, res) => {
-  // console.log(req.params.rootIsbn);
   axios.get(`${alsoBoughtIP}/products/${req.params.rootIsbn}/alsoBought`)
   .then((result) => {
     res.status(200).send(result.data);
@@ -82,9 +81,8 @@ app.get('/category/:bookCategory', (req, res) => {
   })
 })
 
-// app.get('/author/:author', (req, res) => {
-app.get('/author', (req, res) => {
-  axios.get(`${productDetailsIP}/author/${req.query.isbn}`)
+app.get('/author/:author', (req, res) => {
+  axios.get(`${productDetailsIP}/author/${req.params.author}`)
   .then((result) => {
     res.status(200).send(result.data);
   })
@@ -127,52 +125,3 @@ app.put('/books/:identifier/review/:id', (req, res) => {
 app.listen(port, () => {
   console.log(`Listening on EC2 instance port ${port}`);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const httpProxy = require('http-proxy');
-// const apiProxy = httpProxy.createProxyServer();
-
-// app.use(express.static(__dirname + '/../client/dist')); // previously used w/ localhost proxy
-
-// let serverOne   = 'http://localhost:3001';
-// let serverTwo   = 'http://localhost:5001';
-// let serverThree = 'http://localhost:3004';
-// let serverFour  = 'http://localhost:8000';
-
-// app.use(express.json());
-// app.use(express.urlencoded({extended: false}));
-
-// app.get('/', (req, res) => {
-//   res.send('Server running')
-// })
-
-// app.all("/product/9780765326386/formats", (req, res) => {
-//   console.log('connected to server one');
-//   apiProxy.web(req, ers, {target: serverOne});
-// })
-
-// app.all("/products/9780765326386/alsoBought", (req, res) => {
-//   console.log('connected to server one');
-//   apiProxy.web(req, ers, {target: serverTwo});
-// })
-
-// app.all("/products/9780765326386", (req, res) => {
-//   console.log('connected to server one');
-//   apiProxy.web(req, ers, {target: serverThree});
-// })
-
-// app.all("/books/9780765326386/reviews", (req, res) => {
-//   console.log('connected to server one');
-//   apiProxy.web(req, ers, {target: serverFour});
-// })
