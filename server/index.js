@@ -13,8 +13,8 @@ const productDetailsIP = 'http://3.16.221.35:5001';
 const reviewsIP = 'http://3.140.58.207:8000';
 
 /**** Item Selection Service API Calls ****/
-app.get('/product/:id/formats', (req, res) => {//
-  axios.get(`${itemSelectionIP}/product/${req.params.id}/formats`)//
+app.get('/product/:isbn/formats', (req, res) => {//
+  axios.get(`${itemSelectionIP}/product/${req.params.isbn}/formats`)//
   .then((res) => {
     res.status(200).send(res.data);
   })
@@ -36,8 +36,8 @@ app.get('/products/:rootIsbn/alsoBought', (req, res) => {
 })
 
 /**** Product and Author Service API Calls****/
-app.get('/products/:isbn13', (req, res) => {//
-  axios.get(`${productDetailsIP}/products/${req.params.isbn13}`)//
+app.get('/products/:isbn', (req, res) => {//
+  axios.get(`${productDetailsIP}/products/${req.params.isbn}`)//
   .then((res) => {
     res.status(200).send(res.data);
   })
