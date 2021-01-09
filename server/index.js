@@ -39,7 +39,6 @@ app.get('/products/:rootIsbn/alsoBought', (req, res) => {
 
 /**** Product and Author Service API Calls****/
 app.get('/products/:isbn13', (req, res) => {
-  console.log(req.params.isbn13);
   axios.get(`${productDetailsIP}/products/${req.params.isbn13}`)
   .then((result) => {
     res.status(200).send(result.data);
