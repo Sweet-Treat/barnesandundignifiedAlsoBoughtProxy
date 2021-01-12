@@ -11,7 +11,7 @@ app.use(express.urlencoded({extended: false}));
 
 // EC2 IPs (in order of appearance on browser)
 const itemSelectionIP = 'http://18.188.228.195:3001';
-const alsoBoughtIP = 'http://54.183.241.255:3004';
+const alsoBoughtIP = 'http://54.176.137.254:3004';
 const productDetailsIP = 'http://3.16.221.35:5001';
 const reviewsIP = 'http://3.140.58.207:8000';
 
