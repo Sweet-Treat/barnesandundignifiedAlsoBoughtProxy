@@ -121,5 +121,5 @@ app.put('/books/:identifier/review/:id', (req, res) => {
 })
 
 app.listen(port, () => {
-  console.log(`Listening on EC2 instance port ${port}`);
+  console.log(`Listening on port ${port}`);
 });
